@@ -1,0 +1,57 @@
+The data to be used in this assignment was retrieved from a website designed to archive all the available knowledge on Brazilian flora. The governament funded the creation of 
+this website with the intent to rescue herbarium records spread across different countries by a great number of internationl botanists who have thoroughly investigated the vast
+biodiversity of plants in Brazil.
+
+The data was downloaded from the website (http://reflora.jbrj.gov.br/reflora/PrincipalUC/PrincipalUC.do) on November 26th, 2018.
+
+The file has been published as Darwin Core Archive (DwC-A), which follows a stardized format for sharing record data. There are seven tables in the compacted folder downloaded and
+one metadata file explaining the contents of each of the tables. For the purpose of this assignment I will be using only three of the tables available: taxon, distribution and 
+speciesprofile. Below is a detailed explanation of each table and the colum's definition where extracted from the Darwin Core quick reference guide. 
+(http://rs.tdwg.org/dwc/terms/#acceptedNameUsageID)
+
+For the 'taxon' table there are 26 columns organized as follows:
+
+NUMBER  COLUM NAME               DESCRIPTION            
+1       id                       Unique identifier number of entry.
+2       taxonID                  "An identifier for the set of taxon information (data associated with the Taxon class). May be a global unique identifier or an identifier specific to the data set."              			
+3       acceptedNameUsageID      "An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon."
+4       parentNameUsageID        "An identifier for the name usage (documented meaning of the name according to a source) of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName."
+5       originalNameUsageID      "An identifier for the name usage (documented meaning of the name according to a source) in which the terminal element of the scientificName was originally established under the rules of the associated nomenclaturalCode."
+6       scientificName           "The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term."
+7       acceptedNameUsage        "The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) taxon."
+8       parentNameUsage          "The full name, with authorship and date information if known, of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the scientificName."
+9       namePublishedIn          "A reference for the publication in which the scientificName was originally established under the rules of the associated nomenclaturalCode."
+10      namePublishedInYear      "The four-digit year in which the scientificName was published."
+11      higherClassification     "Recommended best practice is to separate the values in a list with space vertical bar space ( | ), with terms in order from the highest taxonomic rank to the lowest."
+12      kingdom                  "The full scientific name of the kingdom in which the taxon is classified."
+13      phylum                   "The full scientific name of the phylum or division in which the taxon is classified."
+14      class                    "The full scientific name of the class in which the taxon is classified."
+15      order                    "The full scientific name of the order in which the taxon is classified."
+16      family                   "The full scientific name of the family in which the taxon is classified."
+17      genus                    "The full scientific name of the genus in which the taxon is classified."
+18      specificEpithet          "The name of the first or species epithet of the scientificName."
+19      infraspecificEpithet     "The name of the lowest or terminal infraspecific epithet of the scientificName, excluding any rank designation."
+20      taxonRank                "The taxonomic rank of the most specific name in the scientificName."
+21      scientificNameAuthorship "The authorship information for the scientificName formatted according to the conventions of the applicable nomenclaturalCode."
+22      taxonomicStatus          "The status of the use of the scientificName as a label for a taxon. Requires taxonomic opinion to define the scope of a taxon. Rules of priority then are used to define the taxonomic status of the nomenclature contained in that scope, combined with the experts opinion. It must be linked to a specific taxonomic reference that defines the concept."
+23      nomenclaturalStatus      "The status related to the original publication of the name and its conformance to the relevant rules of nomenclature. It is based essentially on an algorithm according to the business rules of the code. It requires no taxonomic opinion."
+24      modified                 "The most recent date-time on which the resource was changed."
+25      bibliographicCitation    "Recommended practice is to include sufficient bibliographic detail to identify the resource as unambiguously as possible."
+26      references               "A related resource that is referenced, cited, or otherwise pointed to by the described resource."
+
+
+For the 'distribution' table there are 4 columns organized as follows:
+
+NUMBER  COLUM NAME     	       	 DESCRIPTION 
+1      	id     	       	       	 Unique	identifier number of entry.
+2       locationID               "An identifier for the set of location information (data associated with dcterms:Location). May be a global unique identifier or an identifier specific to the data set."
+3       countryCode              "The standard code for the country in which the Location occurs."
+4       establishmentMeans       "The process by which the biological individual(s) represented in the Occurrence became established at the location."
+5       occurrenceRemarks        "Comments or notes about the Occurrence."
+
+For the 'species profile' table there are 2 columns organized as follows:
+
+NUMBER  COLUM NAME               DESCRIPTION
+1      	id     	       	       	 Unique	identifier number of entry.
+2       lifeForm                 A formal definition of this category wasn't foud, but it described the life form based on habitat and vegetation type.
+3       habitat                  "A category or description of the habitat in which the Event occurred." 
