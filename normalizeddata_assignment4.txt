@@ -1,0 +1,34 @@
+To normalize the data from the three tables containing information on Brazilian flora it is necessary first to clarify how this data would be used. The idea is to create a 
+dataset containing relevant information for the genus Begonia. I chose this genus because there is a high probability that it will be partly investigated in my Ph.D project.
+My goal is to perform phylogenetic and biogeograpchic studies with a clade of 16 species that occur in areas of "campos rupestres" and forests in the Atlantic Forest.
+
+To make the dataset more functional my idea is to maintain the 'taxon' table, reducing the number of columns to those that will be relevant for my objective. However, instead
+of having 'distribution' and 'species profile' as two separate tables the idea is to combine them, once the information can be easily related between both. Also, once the tables
+are ready and combined I will slect only the information pertaining the species of Begonia I am interested in.
+
+For the 'taxon' table the columns maintained are numbered from 1 to 8. They received new names and have a data type assigned. Also, the primary and foreing keys are defined below:
+
+NUMBER  COLUMN NAME               NUMBER OF NEW COLUMN  NAME OF NEW COLUMN  DATA TYPE
+1	taxonID                   1                     ID                  Integer (Primary key)
+5	scientificName            2                     TAXON               String
+6	acceptedNameUsage         3                     ACCEPTED_NAME       String
+8	namePublishedIn           4                     NAME_INFO           String
+21	taxonomicStatus           5                     TAX_STATUS          String
+22	nomenclaturalStatus	  6                     NOM_STATUS          String
+24	bibliographicCitation     7                     BIBLIOGRAPHY        String
+25	references                8                     ONLINE_REF          String
+
+For the 'distribution' and 'species profile' tables all the columns were maintained, but received new names. Data type is assigned for each one of them, as well as primary keys
+and a foreign key for 'species profile', once it will be later joined to the 'distribution table'. 
+
+NUMBER  COLUM NAME               NUMBER OF NEW COLUMN  NAME OF NEW COLUMN  DATA TYPE
+1       id                       1                     TAXON_ID            Integer (Primary key)       
+2	locationID               2                     STATE               String
+3	establishmentMeans	 3                     SITUATION           String
+4	occurrenceRemarks        4                     REMARKS             String
+
+NUMBER  COLUM NAME               
+1       id                       1                     TAXON_ID            Integer (Primary key/Foreign key - distribution.TAXON_ID)
+2	lifeForm                 2                     LIFE_FORM           String
+3	habitat                  3                     HABITAT             String
+
